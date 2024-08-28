@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fakestore E-commerce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+    <script src="./index.js"></script>
+    <style type="text/css">
+        header h1{
+            font-family:serif;font-weight: bold
+        }    
+        #borderImg{
+            border-radius: 50%;
+            /* margin-left: 15px; */
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .modal-body th{
+            font-weight: bold;
+            /* letter-spacing: 1px; */
+            /* text-transform: uppercase; */
+        }
+        .Radius{
+            border-radius: 4px;
+        }
+        tfoot tr td{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .card img:hover{
+            transform: translateY(-3px) scale(1.002);
+          box-shadow: 2px 2px 5px black;
+          transition: transform 0.3s ease;
+        }
+    </style>
+  
+    
+</head>
+<body onload="bodyLoad()" class="container-fluid" id="mainContainer">
+    <header class="bg-danger p-1 m-1  text-white text-center Radius">
+        <h1><span class="bi bi-cart4 p-2"></span> <span>Shopping Cart</span></h1>
+    </header>
+    <section class="p-1 m-1 Radius" style="background-color:#eee">
+        <nav class="row pt-2 mt-2">
+            <div class="col-2">
+                <select class="form-select" id="lstCategories" onchange="CategoryChanged()" name="category">
+
+                </select>
+            </div>
+            <main class="col-8">
+                <div id="lstProducts" class="d-flex flex-wrap overflow-auto" style="height: 750px;">
+
+                </div>
+            </main>
+
+            <aside class="col-2">
+                <button onclick="LoadCartItems()" data-bs-target="#cart" data-bs-toggle="modal" class="btn btn-warning btn btn-lg">
+                    <span class="bi bi-cart3"></span> [<span id="count" style="font-weight: bold;"></span>] <span class="ps-2">Cart</span>
+                </button>
+            
+
+            <!--Modal for showing Cart Items-->
+
+            <div class="modal fade" id="cart" style="width: 800px;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header  text-danger text-center">
+                            <h3 style="font-weight: bold;">YOUR CART ITEMS</h3>
+                            <button class="btn-close btn btn-danger" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-respensive table-hover table-bordered table-striped" >
+                                <thead>
+                                    <tr>
+                                        <th align="center">Title</th>
+                                        <th width="80">Price <span class="bi bi-currency-dollar text-warning"></span></th>
+                                        <th>Preview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr class="table-light">
+                                        <td  style="font-weight: bold;" align="center">Total Price</td>
+                                        <td colspan="2" id="total" align="center"  class="bi-currency-dollar"></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                            <a href="./"><button class="btn btn-danger ps-3 pe-3 pt-2 pb-2">Clear  <i class="bi bi-archive-fill"></i></button></a>
+                            <a href="./userInfo.html"><button class="btn btn-warning ps-3 pe-2 pt-2 pb-2" onclick="PaymentClick(cartTotal)"><b>Next </b> <i class="bi bi-arrow-right-circle-fill ps-2"></i></button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </aside>
+        </nav>
+    </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
