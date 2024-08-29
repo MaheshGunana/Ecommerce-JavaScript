@@ -1,0 +1,27 @@
+        header h1{
+            font-family:serif;font-weight: bold
+        }    
+        #borderImg{
+            border-radius: 50%;
+            /* margin-left: 15px; */
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .modal-body th{
+            font-weight: bold;
+            /* letter-spacing: 1px; */
+            /* text-transform: uppercase; */
+        }
+        .Radius{
+            border-radius: 4px;
+        }
+        tfoot tr td{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .card img:hover{
+            transform: translateY(-3px) scale(1.002);
+          box-shadow: 2px 2px 5px black;
+          transition: transform 0.3s ease;
+        }
