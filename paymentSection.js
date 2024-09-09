@@ -49,8 +49,7 @@ function VerifyUPI(){
         document.querySelector('button').disabled=false;  
     }else{
         document.querySelector('button').disabled=true; 
-    }
-    
+    }   
 }
 
 var total,name
@@ -64,6 +63,7 @@ function AmountClick(){
     const flag = confirm(`Hi , ${username} \n Are you sure your order want to be confirmed!`);
     if(flag){
         alert(` ${total*80} Rs. \n Amount is Debited From Your Account.`);  
+        window.location.href='./orderConfirmation.html'
     }else{
         alert('Try again later.')
     }

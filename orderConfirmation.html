@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Order Confirmation Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <style type="text/css">
+        a{text-decoration: none; transition: 0.8s ease; color:green}
+        a:hover{
+            color: red;
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: 1px;
+            transition: 0.8s ease;
+        }
+        a:active{color: blue;}
+        img:hover{
+            transform: rotateY(360deg);
+            transition-duration: 3.5s;
+            cursor: not-allowed;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <div id="status">
+            <img src="./assets/pending_img.jpg" width="370" height="370" alt="order-pending-img">
+            <h2>Estimated Time : <b id="timer">10</b></h2>
+        </div>
+
+        <div>
+            <img id="confirmedImage" src="./assets/confirmed_img.webp" alt="order-confirmation-img" width="370" height="370" style="display: none;">
+        </div>
+        <div id="home" style="display: none;">
+            <a href="./"> <i class="bi bi-arrow-left-circle-fill"></i> Back to Home</a>
+        </div>
+
+        <script>
+            function updateOrderStatus(){
+                setTimeout(()=>{
+                    document.getElementById('status').style.display="none";
+
+                    document.getElementById('confirmedImage').style.display="block";
+                    document.getElementById('home').style.display='block';
+                },10000)
+                
+                var seconds=9;
+                const countdown=setInterval(()=>{
+                    document.getElementById('timer').innerHTML=seconds;
+                    seconds--;
+
+                    if(seconds<1){
+                        clearInterval(countdown)
+                    }
+                },1000);         
+            }
+            updateOrderStatus()
+        </script>
+    </center>
+</body>
+</html>
