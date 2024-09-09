@@ -10,7 +10,7 @@ function OrderClick() {
 
     document.getElementById('lblName').innerHTML = name;
     document.getElementById('lblEmail').innerHTML = email;
-    document.getElementById('lblPassword').innerHTML = password;
+    // document.getElementById('lblPassword').innerHTML = password;
     document.getElementById('lblMobile').innerHTML = mobile
 
     if(paymentUPI.checked){
